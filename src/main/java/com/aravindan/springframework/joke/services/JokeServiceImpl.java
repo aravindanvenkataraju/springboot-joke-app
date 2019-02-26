@@ -1,5 +1,6 @@
 package com.aravindan.springframework.joke.services;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import guru.springframework.norris.chuck.ChuckNorrisQuotes;
@@ -8,9 +9,13 @@ import guru.springframework.norris.chuck.ChuckNorrisQuotes;
 public class JokeServiceImpl implements JokeService {
 	private final ChuckNorrisQuotes chuckNorrisQuotes;
 
-	JokeServiceImpl() {
-		this.chuckNorrisQuotes = new ChuckNorrisQuotes();
+	
+	public JokeServiceImpl(@Qualifier("getAnotherChuckNorrisQuotes")ChuckNorrisQuotes chuckNorrisQuotes) {
+		super();
+		this.chuckNorrisQuotes = chuckNorrisQuotes;
 	}
+
+
 
 	@Override
 	public String getJoke() {
