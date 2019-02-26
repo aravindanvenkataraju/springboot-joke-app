@@ -10,7 +10,7 @@ public class JokeServiceImpl implements JokeService {
 	private final ChuckNorrisQuotes chuckNorrisQuotes;
 
 	
-	public JokeServiceImpl(@Qualifier("getAnotherChuckNorrisQuotes")ChuckNorrisQuotes chuckNorrisQuotes) {
+	public JokeServiceImpl(ChuckNorrisQuotes chuckNorrisQuotes) {
 		super();
 		this.chuckNorrisQuotes = chuckNorrisQuotes;
 	}

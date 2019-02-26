@@ -10,6 +10,7 @@ import guru.springframework.norris.chuck.ChuckNorrisQuotes;
 public class SpringBootJokeAppConfiguration {
 	
 	@Bean
+	@Primary
 	public ChuckNorrisQuotes getChuckNorrisQuotes() {
 		return new ChuckNorrisQuotes();
 	}
